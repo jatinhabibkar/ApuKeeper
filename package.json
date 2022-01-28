@@ -1,0 +1,39 @@
+{
+  "name": "keep-it",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "node test.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "clientinstall": "npm install --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JATIN2111999/keep-it.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JATIN2111999/keep-it/issues"
+  },
+  "homepage": "https://github.com/JATIN2111999/keep-it#readme",
+  "devDependencies": {
+    "concurrently": "^6.2.1",
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.6",
+    "express": "^4.17.1",
+    "express-mongo-sanitize": "^2.1.0",
+    "express-validator": "^6.12.1",
+    "helmet": "^4.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.4"
+  }
+}

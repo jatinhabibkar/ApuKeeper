@@ -1,0 +1,12 @@
+body{
+    --lightBlack: #313131;
+    --white: #e8eaed ;
+    --darkBlack: #202124;
+    --borderColor:#5f6368;
+    --apuTheme: #00c853;
+    font-family: 'Google Sans',Roboto,Arial,sans-serif !important;
+  }
+
+a{
+  color: var(--apuTheme);
+}
