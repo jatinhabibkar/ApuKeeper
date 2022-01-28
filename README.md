@@ -1,5 +1,5 @@
 # ApuKeeper
-<p align="center"><img width="120px" src="../keep-it/image/icon-144x144.png" /></p>
+<p align="center"><img width="120px" src="./image/icon.png" /></p>
 
 ### Google keep clone PWA app using MERN stack
 
