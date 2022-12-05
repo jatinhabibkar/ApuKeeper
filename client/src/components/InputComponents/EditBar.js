@@ -4,7 +4,7 @@ import HomeContext from "../../context/home/HomeContext";
 
 export const EditBar = () => {
   const homeContext = useContext(HomeContext);
-  const { addKeep,filterKeep,clearFilter } = homeContext;
+  const { addKeep, filterKeep, clearFilter } = homeContext;
 
   const [keep, setkeep] = useState({
     title: "",
@@ -48,9 +48,9 @@ export const EditBar = () => {
 
   // search engine
   const [searchbar, setbar] = useState(false);
-  const onSearch =(e)=>{
-    filterKeep(e.target.value)
-  }
+  const onSearch = (e) => {
+    filterKeep(e.target.value.replaceAll("\\", ""));
+  };
 
   return (
     <div className="editbar">
@@ -72,21 +72,22 @@ export const EditBar = () => {
         </div>
       )}
       <div className="main-task-editbar flexBox">
-       {!searchbar && <textarea
-          id="textarea1"
-          name="parg"
-          className="materialize-textarea woborder"
-          placeholder="Take a note..."
-          style={keep.parg === "" ? editorstyle : fillstyle}
-          value={keep.parg}
-          onChange={(e) => {
-            setkeep({ ...keep, [e.target.name]: e.target.value });
-            localStorage.setItem("parg", e.target.value);
-          }}
-        />}
+        {!searchbar && (
+          <textarea
+            id="textarea1"
+            name="parg"
+            className="materialize-textarea woborder"
+            placeholder="Take a note..."
+            style={keep.parg === "" ? editorstyle : fillstyle}
+            value={keep.parg}
+            onChange={(e) => {
+              setkeep({ ...keep, [e.target.name]: e.target.value });
+              localStorage.setItem("parg", e.target.value);
+            }}
+          />
+        )}
 
-        {searchbar &&
-
+        {searchbar && (
           <input
             className="woborder"
             type="text"
@@ -97,20 +98,24 @@ export const EditBar = () => {
             onChange={onSearch}
             autoFocus
           />
-        }
+        )}
 
-        {keep.parg + keep.title === "" && (!searchbar ? (
-          <div className="myicons2" onClick={()=>setbar(true)}>
-            <i className="material-icons noselect search-icon">search</i>
-          </div>
-        ) : (
-          <div className="myicons2" onClick={()=>{
-            setbar(false)
-            clearFilter()
-          }}>
-            <i className="material-icons noselect search-icon">close</i>
-          </div>
-        ))}
+        {keep.parg + keep.title === "" &&
+          (!searchbar ? (
+            <div className="myicons2" onClick={() => setbar(true)}>
+              <i className="material-icons noselect search-icon">search</i>
+            </div>
+          ) : (
+            <div
+              className="myicons2"
+              onClick={() => {
+                setbar(false);
+                clearFilter();
+              }}
+            >
+              <i className="material-icons noselect search-icon">close</i>
+            </div>
+          ))}
       </div>
       {keep.parg + keep.title !== "" && (
         <div className="editButton">

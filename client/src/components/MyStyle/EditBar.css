@@ -1,0 +1,83 @@
+.editbar {
+    background-color: var(--darkBlack);
+    margin: 5px auto 10px;
+    border: 2px solid var(--borderColor);
+    border-radius: 8px;
+    border-radius: 8px;
+    width: 60%;
+}
+
+@media only screen and (max-width: 480px) {
+    .editbar {
+        width: 95%;
+    }
+
+    .collections span {
+        width: 100% !important;
+        display: contents !important;
+    }
+
+    .items {
+        margin: 1em 1em 1em 1em;
+    }
+
+    .away-nav {
+        margin: 70px auto;
+    }
+}
+
+
+.main-task-editbar {
+    text-align: left;
+    padding: 9px 16px 9px 16px;
+    line-height: 1.3rem;
+    letter-spacing: .04428571em
+}
+
+.title-editbar {
+    padding: 16px 10px 0 16px;
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-align: left;
+    width: auto;
+    color: var(--white);
+    line-height: 1.3rem;
+    letter-spacing: .04428571em
+}
+
+.woborder  {
+    border-bottom: none !important;
+    margin: 0 0 0 0 !important;
+    box-shadow: none !important;
+    color: var(--white);
+    overflow-y: scroll !important;
+    vertical-align: bottom;
+}
+
+.materialize-textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.editButton {
+    color: var(--white);
+    text-align: right;
+    margin-bottom: 10px !important;
+    font-weight: 600;
+}
+
+.mybuttons {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.myicons2 {
+    border-radius: 50%;
+    width: 40px;
+    font-size: 2px;
+    cursor: pointer;
+    vertical-align: bottom;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

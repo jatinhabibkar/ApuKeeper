@@ -10,7 +10,7 @@ export const Header = () => {
   const homeContext = useContext(HomeContext);
 
   const { isAuthenticated, logout, user } = authContext;
-  const { clearKeeps ,filtered,clearFilter} = homeContext;
+  const { clearKeeps, filtered, clearFilter } = homeContext;
   const onLogout = () => {
     clearKeeps();
     clearFilter();
@@ -18,13 +18,21 @@ export const Header = () => {
   };
   const searchingApu = (
     <Link to="/" className="left brand-logo">
-      <img src={apusearch} alt="apu-search" style={{ height: "56px", verticalAlign: "bottom" }} />
+      <img
+        src={apusearch}
+        alt="apu-search"
+        style={{ height: "56px", verticalAlign: "bottom" }}
+      />
       <span className=" hide-on-small-only">Apu-searching</span>
     </Link>
   );
   const defaultApu = (
     <Link to="/" className="left brand-logo">
-      <img src={apunerd} alt="apu-default" style={{ height: "56px", verticalAlign: "bottom" }} />
+      <img
+        src={apunerd}
+        alt="apu-default"
+        style={{ height: "56px", verticalAlign: "bottom" }}
+      />
       <span className=" hide-on-small-only">Apu-keeper</span>
     </Link>
   );
@@ -37,7 +45,7 @@ export const Header = () => {
 
   const authLinks = (
     <Fragment>
-      <ul className="right noselect" >
+      <ul className="right noselect">
         <li>Hello {user && user.name}</li>{" "}
         <li>
           <a href="/login" onClick={onLogout}>
@@ -50,7 +58,6 @@ export const Header = () => {
 
   const guestLinks = (
     <Fragment>
-      
       <ul className="right">
         <li>
           <Link to="/login">Login</Link>
@@ -68,7 +75,6 @@ export const Header = () => {
     <div>
       <nav>
         <div className="grey darken-4 nav-wrapper">
-          
           {filtered ? searchingApu : isAuthenticated ? defaultApu : noApu}
           {isAuthenticated ? authLinks : guestLinks}
         </div>

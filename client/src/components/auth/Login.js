@@ -3,13 +3,15 @@ import "../MyStyle/Auth.css";
 import AuthContext from "../../context/auth/authContext";
 import { Alert } from "../utils/Alert";
 import apu from "../MyStyle/ok.png";
+import { Loading } from "../utils/Loading";
 
 export const Login = (props) => {
   const authContext = useContext(AuthContext);
   const { login, error, isAuthenticated, clearErrors } = authContext;
   const [alert, changealert] = useState(null);
-
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
+    setLoading(false);
     if (isAuthenticated) {
       props.history.push("/");
     }
@@ -21,7 +23,7 @@ export const Login = (props) => {
       }, 3000);
     }
     // eslint-disable-next-line
-  }, [error,isAuthenticated, props.history]);
+  }, [error, isAuthenticated, props.history]);
 
   const [user, setUser] = useState({
     email: localStorage.getItem("localemail") || "",
@@ -39,6 +41,7 @@ export const Login = (props) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    setLoading(true);
     if (email === "" || password === "") {
       changealert("please fill in all details");
     } else {
@@ -93,18 +96,25 @@ export const Login = (props) => {
             value="Login"
             className=" left btn green accent-4 btn-white"
           />
-          
+
           <input
             type="button"
             value="Use Guest Login"
             className=" left btn blue accent-4 btn-white"
-            style={{marginLeft:"20px"}}
-            onClick={()=>{login({
-              email:'guest@gmail.com',
-              password:'guest#123'
-            })}}
+            style={{ marginLeft: "20px" }}
+            onClick={() => {
+              login({
+                email: "guest@gmail.com",
+                password: "guest#123",
+              });
+            }}
           />
         </form>
+        {loading && (
+          <div className="center" style={{ width: "100px" }}>
+            <Loading color={"white"} />
+          </div>
+        )}
       </div>
     </div>
   );

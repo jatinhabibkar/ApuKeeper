@@ -1,4 +1,9 @@
-body{
+body::-webkit-scrollbar {
+  display: none;
+}
+
+html{
+    background-color: var(--lightBlack);
     --lightBlack: #313131;
     --white: #e8eaed ;
     --darkBlack: #202124;
@@ -9,4 +14,19 @@ body{
 
 a{
   color: var(--apuTheme);
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--white);
+  opacity: 0.7; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: var(--white);
+  opacity: 0.7; /* Firefox */
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: var(--white);
+  opacity: 0.7; /* Firefox */
 }

@@ -5,7 +5,10 @@ export const Footer = () => {
   return (
     <Fragment>
       <div className="myfooter">
-          made with ❤️ by <span><Link to="/about">Apu</Link></span>
+        made with ❤️ by{" "}
+        <span>
+          <Link to="/about">Apu</Link>
+        </span>
       </div>
     </Fragment>
   );

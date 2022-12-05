@@ -9,6 +9,7 @@ import AuthState from "./context/auth/AuthState";
 import { Footer } from "./components/layout/Footer";
 import { About } from "./components/pages/About";
 import { Fragment} from "react";
+import { Privacy } from "./components/pages/Privacy";
 
 function App() {
 
@@ -24,6 +25,8 @@ function App() {
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/about" component={About} />
+              <Route exact path="/privacy" component={Privacy} />
+              <Route component={About} />
             </Switch>
             <Footer />
           </Fragment>

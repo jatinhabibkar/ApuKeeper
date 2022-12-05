@@ -1,0 +1,9 @@
+.apuTheme{
+    color: var(--apuTheme);
+}
+
+.Authinput{
+    color: var(--white);
+    border-bottom: 1px solid var(--apuTheme) !important;
+    width: 100%;
+}

@@ -8,6 +8,7 @@ import HomeContext from "../context/home/HomeContext";
 import AuthContext from "../context/auth/authContext";
 import { useEffect } from "react";
 import PropTypes from "prop-types";
+import { Loading } from "./utils/Loading";
 
 export const Home = () => {
   const homeContext = useContext(HomeContext);
@@ -22,7 +23,10 @@ export const Home = () => {
   }, []);
   const loadingblock = (
     <h2 className="center" style={{ color: "var(--white)" }}>
-      loading...
+      loading
+      <div className="center" style={{ width: "100px", margin: "0 auto" }}>
+        <Loading />
+      </div>
     </h2>
   );
 
@@ -43,18 +47,15 @@ export const Home = () => {
               plzaddblock
             ) : filtered !== null ? (
               <StackGrid columnWidth={240}>
-                {keeps.filter((item) => {
-                  if (filtered.includes(item._id))
-                    return true
-                  else
-                    return false
-                }).map((item)=>(
-                  <KeepCard
-                        item={item}
-                        key={item._id}
-                        updateLayout={updateLayout}
-                      />
-                ))}
+                {keeps
+                  .filter((item) => filtered.includes(item._id))
+                  .map((item) => (
+                    <KeepCard
+                      item={item}
+                      key={item._id}
+                      updateLayout={updateLayout}
+                    />
+                  ))}
               </StackGrid>
             ) : (
               <StackGrid columnWidth={240}>
