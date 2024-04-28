@@ -1,0 +1,45 @@
+version: '3.9'
+
+services:
+  database_server:
+    image: mongo:6-jammy
+    ports:
+      - 27017:27017
+    volumes:
+      - vol_database:/data/db
+    networks:
+      - node-network
+
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: npm run server
+    ports:
+      - 5000:5000
+    depends_on:
+      - database_server
+    networks:
+      - node-network
+      
+  frontend:
+    build: 
+      dockerfile: Dockerfile
+      context: ./client
+    command: npm run start
+    volumes:
+      - /app/node_modules
+      - ./client:/app
+    depends_on:
+      - server
+    ports:
+      - 3000:3000
+    networks:
+      - node-network
+    
+
+volumes:
+  vol_database:
+networks:
+  node-network:
+    driver: bridge

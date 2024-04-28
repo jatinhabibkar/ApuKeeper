@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "config": "^3.3.6",
+    "config": "^3.3.11",
     "express": "^4.17.1",
     "express-mongo-sanitize": "^2.1.0",
     "express-validator": "^6.12.1",
