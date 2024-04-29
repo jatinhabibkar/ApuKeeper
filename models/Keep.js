@@ -1,22 +1,22 @@
 const mongoose = require('mongoose')
 
 const KeepSchema = mongoose.Schema({
-    user:{
+    user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref:'users'
+        ref: 'users'
     },
-    title:{
-        type:String,
-        maxlength:999
+    title: {
+        type: String,
+        maxlength: 999
     },
-    parg:{
-        type:String,
-        maxlength : 19999
+    parg: {
+        type: String,
+        maxlength: 19999
     },
-    date:{
-        type:Date,
-        default:Date.now
+    date: {
+        type: Date,
+        default: Date.now
     }
 })
 
-module.exports = mongoose.model('keep',KeepSchema)
+module.exports = mongoose.model('keep', KeepSchema)
