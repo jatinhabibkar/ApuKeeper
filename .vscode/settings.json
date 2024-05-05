@@ -1,6 +1,0 @@
-{
-  "editor.wordWrap": "on",
-  "emmet.includeLanguages": {
-    "javascript": "javascriptreact"
-  }
-}

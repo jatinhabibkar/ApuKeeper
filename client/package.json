@@ -1,46 +1,26 @@
 {
-  "name": "keep-it",
+  "name": "apu-keeper",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "axios": "^0.21.3",
-    "firebase-tools": "^9.16.5",
-    "materialize-css": "^1.0.0-rc.2",
-    "minigrid": "^3.1.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-linkify": "^1.0.0-alpha",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
-    "react-stack-grid": "^0.7.1",
-    "web-vitals": "^1.1.2"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "dependencies": {
+    "materialize-css": "^1.0.0-rc.2",
+    "next": "14.2.3",
+    "react": "^18",
+    "react-dom": "^18"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "proxy": "http://localhost:5000"
+  "devDependencies": {
+    "@types/materialize-css": "^1.0.14",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
+    "typescript": "^5"
+  }
 }
