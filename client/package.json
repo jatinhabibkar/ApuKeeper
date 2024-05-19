@@ -14,11 +14,12 @@
     "react-dom": "^17.0.2",
     "react-linkify": "^1.0.0-alpha",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^5.0.1",
     "react-stack-grid": "^0.7.1",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "prestart": "node setProxy.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -41,6 +42,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "proxy": "http://localhost:5000"
+  }
 }

@@ -34,6 +34,6 @@
     "express-validator": "^6.12.1",
     "helmet": "^4.6.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.0.4"
+    "mongoose": "^8.3.2"
   }
 }
