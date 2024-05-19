@@ -28,12 +28,12 @@
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "config": "^3.3.11",
+    "config": "^3.3.6",
     "express": "^4.17.1",
     "express-mongo-sanitize": "^2.1.0",
     "express-validator": "^6.12.1",
     "helmet": "^4.6.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.0.4"
+    "mongoose": "^8.3.2"
   }
 }

@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const connectDB = require('./config/db')
+const connectDB = require('./database/db')
 const path = require('path')
 const mongoSanitize = require('express-mongo-sanitize');
 

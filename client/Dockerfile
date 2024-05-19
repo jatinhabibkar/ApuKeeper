@@ -1,5 +1,9 @@
-FROM node:14.16.0-alpine3.13
-WORKDIR "/app"
+FROM node:16.9.1-alpine as build
+WORKDIR /app
+
+COPY package.json /app
+COPY package-lock.json /app
+
 COPY --chown=node:node package.json .
 RUN npm cache clean --force
 RUN npm install 

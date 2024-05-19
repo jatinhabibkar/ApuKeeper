@@ -7,8 +7,6 @@ services:
       - 27017:27017
     volumes:
       - vol_database:/data/db
-    networks:
-      - node-network
 
   server:
     build:
@@ -19,11 +17,11 @@ services:
       - 5000:5000
     depends_on:
       - database_server
-    networks:
-      - node-network
-      
+    environment:
+      MONGO_URI: "mongodb://database_server:27017/my_database"
+
   frontend:
-    build: 
+    build:
       dockerfile: Dockerfile
       context: ./client
     command: npm run start
@@ -34,12 +32,8 @@ services:
       - server
     ports:
       - 3000:3000
-    networks:
-      - node-network
-    
+    environment:
+      REACT_APP_PROXY: "http://server:5000"
 
 volumes:
   vol_database:
-networks:
-  node-network:
-    driver: bridge
